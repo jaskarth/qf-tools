@@ -1,6 +1,8 @@
 package supercoder79;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 
 public class Main {
@@ -24,7 +26,17 @@ public class Main {
                 extra = "--legacy-saving ";
             }
 
-            Runtime.getRuntime().exec("java -jar " + file.getAbsolutePath() + " " + extra + inputDir.getAbsolutePath() + " " + outdir.getAbsolutePath());
+            System.out.println("Decompiling with " + file.getAbsolutePath());
+
+            Process exec = Runtime.getRuntime().exec("java -jar " + file.getAbsolutePath() + " " + extra + inputDir.getAbsolutePath() + " " + outdir.getAbsolutePath());
+
+            BufferedReader serr = new BufferedReader(new InputStreamReader(exec.getInputStream()));
+
+            String s;
+
+            while ((s = serr.readLine()) != null) {
+                System.out.println(s);
+            }
         }
     }
 }
