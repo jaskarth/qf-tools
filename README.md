@@ -1,4 +1,6 @@
-# Quiltflower Multi-Decompile
-This is a project I threw together in about 5 minutes because I wanted to diff Quiltflower versions across multiple versions.
-To use, drop your class file or jar file into ./input/ and your Quiltflower jars into ./input/ . Your decompiled file will be in ./output/<qfver>/.
-This should also work with other Fernflower derivatives.
+# Jasmine's Quiltflower Tools
+
+In my time leading Quiltflower development, I've wished that certain tools existed to make my development easier. This is a collection of those tools.
+Here you will find:
+- Multi-Decompile: Allows you to decompile the same jar/classfile across multiple versions of Quiltflower, and compare those outputs.
+- Regression Suite: A tool to automatically run Quiltflower against a huge (~200MB) set of libraries and diff the output.

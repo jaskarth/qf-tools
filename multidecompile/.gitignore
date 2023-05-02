@@ -1,0 +1,8 @@
+.idea/
+/.gradle/
+/build/
+/out/
+bin
+/input/
+/output/
+/jars/
